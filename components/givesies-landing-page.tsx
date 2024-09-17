@@ -1,11 +1,12 @@
-import { useState } from 'react'
+"'use client'"
+
+import { useState } from "'react'"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 
-export default function GivesiesLandingPage() {
-  // const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const isMenuOpen = false;
+export function GivesiesLandingPage() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <div className="flex flex-col min-h-screen bg-[#4cc9f0] text-gray-900">
@@ -16,6 +17,7 @@ export default function GivesiesLandingPage() {
         </Link>
         <button
           className="lg:hidden text-gray-500 hover:text-[#7209b7]"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
